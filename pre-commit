@@ -1,0 +1,10 @@
+
+
+# SEO Hook
+HTML_FILES=$(find . -type f -name "*.html")
+python .git/hooks/seo-pre-commit.py $HTML_FILES
+if [ $? -ne 0 ]; then
+  echo "😢 SEO needs improvement!"
+  exit 1
+fi
+echo "🍑 Perfect SEO!"
